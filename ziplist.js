@@ -1,12 +1,12 @@
 
 const arrayOne = [1, 2, 3, 4];
-const arrayTwo = [5, 6, 7, 8];
+const arrayTwo = ['a', 'b', 'c', 'd'];
 
 function zipList(arr1, arr2) {
-  let newArray = [];
+  const newArray = [];
   for (let i = 0; i < arr1.length; i++) {
-    newArray += arr1[i];
-    newArray += arr2[i];
+    newArray.push(arr1[i]);
+    newArray.push(arr2[i]);
   }
   return newArray;
 }
@@ -14,7 +14,7 @@ function zipList(arr1, arr2) {
 console.log(zipList(arrayOne, arrayTwo));
 
 function zipListTheSimpleWay(arr1, arr2) {
-  return _.zip(arr1, arr2);
+  return _.flatten(_.zip(arr1, arr2));
 }
 
 console.log(zipListTheSimpleWay(arrayOne, arrayTwo));
